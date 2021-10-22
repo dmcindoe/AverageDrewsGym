@@ -1,0 +1,38 @@
+<h1>Appointment Changes</h1>
+
+<%= form_for (@appointment) do |form|%>
+    <br>
+    
+    <label> Choose Client </label>
+    <%= form.collection_select :client_id, @all_clients, :id, :name%>
+    
+    <br>
+    
+    <label> Assign a Trainer </label>
+    <%= form.collection_select :trainer_id, @all_trainers, :id, :name%>
+    
+    <br>
+    
+    <label> Enter Workout Notes from Client </label>
+    <%= form.text_field :workout%>
+    
+    <br>
+
+    <label> Enter Date of Workout</label>
+    <%= form.date_field :date %>    
+    <br>
+
+    <label> Select Timeslot</label>
+    <%= form.select :timeslot, [["Early Morining: 6 to 8am"], ["Mid Morning: 9 to 11am"], ["Mid Day: 12 to 2pm"], ["Mid Afternoon: 3 to 5pm"], ["Evening: 6 to 8pm"]], {include_blank: "Select Appointment Time Slot"}%>
+   
+    <br>
+
+  <%= form.submit "Update Appointment" %>
+
+    <br>
+
+<% end %> 
+
+<%= button_to "Delete Appointment", trainer_path(@appointment.trainer), method: :delete %>
+
+

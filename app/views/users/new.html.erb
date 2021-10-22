@@ -1,0 +1,39 @@
+<div class="text-center">
+  <h1> New User Sign Up Below Please </h1>
+  <p>Remember both email and password are case sensitive</p>   
+
+<div class="container">
+  <%= form_for(@user) do |form| %>
+  <div class="d-flex flex-column justify-content-center">
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation, "Confirm Password" %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+    </div>
+
+      <%= form.submit "Create your employee account", class: "btn btn-primary" %>
+   
+      <% end %>
+
+    <%= link_to "Current User? Click to go login", root_url %>
+    
+  </div>
+</div>
+
+
+   

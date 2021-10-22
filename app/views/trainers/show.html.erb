@@ -1,0 +1,15 @@
+<h1><%= @trainer.name %></h1>
+<p>Click Appointment Date to Edit or Delete</p>
+<div> <%= link_to "Make New Appointment", new_appointment_path %> </div>
+
+<br>
+  <h2> Appointments with Clients </h2>
+  <% @trainer.appointments.uniq.each do |apt| %>
+  <%= link_to apt.client.name, client_path(apt.client) %>
+<br>
+  <h3> Upcomming Workout Notes: </h3>
+  <ul> <%= apt.workout %></ul>
+  <ul> <%= link_to apt.date, edit_appointment_path(apt) %>  </ul>
+  <ul> <%= apt.timeslot%> </ul>
+<% end %>
+

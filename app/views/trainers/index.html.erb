@@ -1,0 +1,10 @@
+<% @trainers.each do |trainer| %>
+  <div class="Trainerstyle">
+    <div> <%= link_to trainer.name, trainer_path(trainer) %> </div>
+    <label> Area of Expertise </label>
+    <li><%= trainer.expertise%></li>
+  </div>
+  <% end %>
+
+  <div> <%= link_to "See All Appointments", appointments_path %> </div>
+  <div> <%= link_to "Back to Make New Appointment", new_appointment_path %> </div>
