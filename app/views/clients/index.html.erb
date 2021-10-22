@@ -1,11 +1,16 @@
-<% @clients.each do |client| %>
-    <div> <%= link_to client.name, client_path(client) %> </div>
-    <label> Membership Level </label>
-    <li><%=client.membership%></li>
-    
-  <% end %>
-
-  <div> <%= link_to "See All Appointments", appointments_path %> </div>
-  <div> <%= link_to "Back to Make New Appointment", new_appointment_path %> </div>
-
-  
+<div class="Clientbackdrop">
+<h1 class="Clientheader">Current Full Time Client List </h1>
+  <div class="col-sm-6">
+  <% @clients.each do |client| %>
+    <div class ="Cardalign">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to client.name, client_path(client) %></h5>
+        <p class="card-text">Membership Level: <%=client.membership%></p>
+      </div>
+    </div>
+    <hr style="width:50%", size="3", color=black>
+    <% end %>
+    </div>
+  </div>
+</div>

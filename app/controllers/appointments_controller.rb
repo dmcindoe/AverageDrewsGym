@@ -41,8 +41,10 @@ class AppointmentsController < ApplicationController
 
 
   def destroy
-    Appointment.find(params[:id]).destroy
-    redirect_to trainer_path(@appointment.trainer)
+    @appointment = Appointment.find(params[:id])
+    @trainer = @appointment.trainer
+    @appointment.destroy
+    redirect_to trainer_path(@trainer)
   end
     
     private
@@ -52,7 +54,6 @@ class AppointmentsController < ApplicationController
   end
 
   def require_login
-    # byebug
     redirect_to login_path unless session.include? :user_id
   end
 

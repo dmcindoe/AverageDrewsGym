@@ -1,4 +1,14 @@
+/* ...
+  *= require_self
+  *= require_tree .
+*/
+
 body {
-    background:radial-gradient(#00FF7F,#6BB6CF);
+    background-image: url( "yellowhw.jpeg");
+    background-repeat:repeat-y;
+    background-size: 2000px 1000px;
+    color: dodgerblue;
+    text-align: center
 }
+
 

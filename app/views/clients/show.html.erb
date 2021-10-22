@@ -1,13 +1,22 @@
-<h1><%= @client.name %></h1>
-<p>Click Appointment Date to Edit or Delete</p>
-<div> <%= link_to "Make New Appointment", new_appointment_path %> </div>
-<br>
+<div class="Clientbackdrop">
+  <div class="Clientheader">
+  <h1><%= @client.name %></h1>
   <h2> Appointments with Trainers </h2>
-  <% @client.appointments.uniq.each do |apt| %>
-  <%= link_to apt.trainer.name, trainer_path(apt.trainer) %>
-<br>
-  <h3> Upcomming Workout Client Notes: </h3>
-  <ul> <%= apt.workout %></ul>
-  <ul> <%= link_to apt.date, edit_appointment_path(apt) %>
-  <ul> <%= apt.timeslot%> </ul>
-<% end %>
+  </div>
+    
+    
+    <br>
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+     <% @client.appointments.uniq.each do |apt| %>
+    <h5 class="card-title"><%= link_to apt.trainer.name, trainer_path(apt.trainer) %> </h5>
+     <small class="card-subtitle mb-2 text-muted"> Click Appointment Date to Edit or Delete </small>
+    <h5> Upcomming Workout Client Notes: </h5>
+    <li class="card-text"> <%= apt.workout %></li>
+    <li class="card-text"> <%= link_to apt.date, edit_appointment_path(apt) %></li>
+    <li class="card-text"> <%= apt.timeslot%> </li>
+    <hr style="width:50%", size="3", color=black>
+  <% end %>
+</div>
+</div>
+</div>

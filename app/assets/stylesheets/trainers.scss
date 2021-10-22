@@ -1,4 +1,23 @@
 // Place all the styles related to the Trainers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-Trainerstyle { background-image: url("../images/Weight\ Room.jpeg");}
+.Trainerstyle{ background-image: url("Smallhandweights.jpeg");
+               background-repeat: no-repeat;
+               background-size:2000px 1000px;
+}
+.Trainerheader {
+    font: normal small-caps normal 50px/1.4 Georgia;
+    -ms-flex-align: center;
+    color: white;
+}
+
+.Trainalignment {
+    text-align: justify;
+    background-image: url("Barbell.jpg");
+    background-repeat: repeat-y;
+    background-size:2000px 1000px;
+}
+
+.card {
+    border: black solid 2px;
+}

@@ -1,3 +1,15 @@
 // Place all the styles related to the Clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.Clientbackdrop {
+   background-image: url( "plate.jpeg");
+   background-repeat:repeat-y;
+   background-size: 2000px 1000px;
+}
+
+.Clientheader {
+   font: normal small-caps normal 50px/1.4 Georgia;
+    -ms-flex-align: center;
+    color: white;
+}

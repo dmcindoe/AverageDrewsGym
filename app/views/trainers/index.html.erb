@@ -1,10 +1,14 @@
-<% @trainers.each do |trainer| %>
-  <div class="Trainerstyle">
-    <div> <%= link_to trainer.name, trainer_path(trainer) %> </div>
-    <label> Area of Expertise </label>
-    <li><%= trainer.expertise%></li>
-  </div>
-  <% end %>
+<div class="Trainerstyle">
+ <h1 class="Trainerheader"> Current Trainers On Staff and Available</h1>
 
-  <div> <%= link_to "See All Appointments", appointments_path %> </div>
-  <div> <%= link_to "Back to Make New Appointment", new_appointment_path %> </div>
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <% @trainers.each do |trainer| %>
+    <h5 class="card-title"><%= link_to trainer.name, trainer_path(trainer) %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"> Area of Expertise</h6>
+    <p class="card-text"><%= trainer.expertise%></p>
+    <hr style="width:50%", size="3", color=black>
+    <%end%>
+  </div>
+ </div>
+</div>

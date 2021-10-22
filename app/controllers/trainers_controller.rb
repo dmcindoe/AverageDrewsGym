@@ -9,11 +9,6 @@ class TrainersController < ApplicationController
     @trainers = Trainer.all
   end
 
-  def destroy
-    @appointment = Appointment.find(params[:id])
-    @appointment.destroy
-    redirect_to trainer_path(@appointment.trainer)
-  end
     
     private
     

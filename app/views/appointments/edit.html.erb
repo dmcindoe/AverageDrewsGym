@@ -23,7 +23,7 @@
     <br>
 
     <label> Select Timeslot</label>
-    <%= form.select :timeslot, [["Early Morining: 6 to 8am"], ["Mid Morning: 9 to 11am"], ["Mid Day: 12 to 2pm"], ["Mid Afternoon: 3 to 5pm"], ["Evening: 6 to 8pm"]], {include_blank: "Select Appointment Time Slot"}%>
+    <%= form.select :timeslot, [["Early Morning: 6 to 8am"], ["Mid Morning: 9 to 11am"], ["Mid Day: 12 to 2pm"], ["Mid Afternoon: 3 to 5pm"], ["Evening: 6 to 8pm"]], {include_blank: "Select Appointment Time Slot"}%>
    
     <br>
 
@@ -33,6 +33,6 @@
 
 <% end %> 
 
-<%= button_to "Delete Appointment", trainer_path(@appointment.trainer), method: :delete %>
+<%= button_to "Delete Appointment", @appointment, method: :delete %>
 
 
