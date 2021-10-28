@@ -2,7 +2,7 @@ class TrainersController < ApplicationController
   before_action :require_login
 
   def show
-    @trainer = Trainer.find(params[:id])
+    @trainer = Trainer.includes(:appointments => :client).find(params[:id])
   end
 
   def index
