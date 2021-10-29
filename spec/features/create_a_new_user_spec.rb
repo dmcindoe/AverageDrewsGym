@@ -32,17 +32,29 @@ it "they cannot create a new user if passwords dont match" do
     expect(current_path).to eq "/users"
 end 
 
-#   it "go back to log in path from user page to sign in" do
+  it "go back to log in path from user page to sign in" do
     
-#     visit new_session_path
+    visit new_session_path
 
-#     fill_in "Email", with: "Bluecollar@yahoo.com"
-#     fill_in "Password", with: "password89"
+    fill_in "Email", with: "Bluecollar@yahoo.com"
+    fill_in "Password", with: "password89"
 
-#     expect { click_on "Log in" }.to change(User, :count).by(0)
+    expect { click_on "Log in" }.to change(User, :count).by(0)
 
-#     expect(page).to have_content "Somethings wrong, try again"
+    expect(current_path).to eq login_path
+  end
 
-#     expect(current_path).to eq "/users"
-#   end
+  it "Unable to log in due to incorrect password" do
+    
+    visit new_session_path
+
+    fill_in "Email", with: "Bluecollar@yahoo.com"
+    fill_in "Password", with: "password99"
+
+    expect { click_on "Log in" }.to change(User, :count).by(0)
+
+    expect(page).to have_content "Invalid email/password combination"
+
+    expect(current_path).to eq "/login"
+  end
 end 
