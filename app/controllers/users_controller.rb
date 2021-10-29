@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      flash[:success] = "User could not be created"
+      flash[:error] = "User could not be created"
       render :new
     end
   end
