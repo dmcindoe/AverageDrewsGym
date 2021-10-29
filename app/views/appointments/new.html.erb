@@ -4,7 +4,7 @@
 
     <br>
   <div class="Signup">  
-    <label class="font-weight-bold"> Choose Client </label>
+    <label class="font-weight-bold client_selector"> Choose Client </label>
     <%= form.collection_select :client_id, @all_clients, :id, :name%>
     
     <br>
@@ -24,7 +24,7 @@
     <br>
 
     <label class="font-weight-bold"> Select Timeslot</label>
-    <%= form.select :timeslot, [["Early Morining: 6 to 8am"], ["Mid Morning: 9 to 11am"], ["Mid Day: 12 to 2pm"], ["Mid Afternoon: 3 to 5pm"], ["Evening: 6 to 8pm"]], {include_blank: "Select Appointment Time Slot"}%>
+    <%= form.select :timeslot, [["Early Morning: 6 to 8am"], ["Mid Morning: 9 to 11am"], ["Mid Day: 12 to 2pm"], ["Mid Afternoon: 3 to 5pm"], ["Evening: 6 to 8pm"]], {include_blank: "Select Appointment Time Slot"}%>
     </div>
    
     <br>

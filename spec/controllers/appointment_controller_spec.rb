@@ -83,6 +83,7 @@ RSpec.describe AppointmentsController, type: :controller do
     expect(flash[:success]).to eq "Appointment could not be created"
   end
 
+
 #   describe "GET #index" do
 #     subject { get :index }
 #         #Makes a request to grab all currently generated appointments
