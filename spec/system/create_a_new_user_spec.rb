@@ -12,20 +12,34 @@ describe "user arrival to app before logging in", type: :system do
 
     expect { click_on "Create your employee account" }.to change(User, :count).by(1)
 
-    expect(page).to redirect_to show_user_path
+    expect(current_path).to eq "/users/1"
 
-#    end
-#   end
+
 end
 
-#   it "they cannot create a new account if passwords dont match" do
+# it "they cannot create a new user if passwords dont match" do
 #     visit sign_up_path
 
-#     fill_in "Username", with: "professorSteve"
-#     fill_in "Password", with: "password"
-#     fill_in "Password Confirmation", with: "notthesamepassword"
+#     fill_in "Name", with: "Jay"
+#     fill_in "Email", with: "Bluecollar@yahoo.com"
+#     fill_in "Password", with: "password89"
+#     fill_in "Password confirmation", with: "password99"
 
-#     expect { click_on "Sign Up" }.to change(User, :count).by(0)
+#     expect { click_on "Create your employee account" }.to change(User, :count).by(0)
+
+#     expect(flash[:success]).to have_content "User could not be created"
+
+#     expect(current_path).to eq "/users/new"
+# end 
+
+#   it "go back to log in path from user page to sign in" do
+    
+#     visit new_session_path
+
+#     fill_in "Email", with: "Bluecollar@yahoo.com"
+#     fill_in "Password", with: "password89"
+
+#     expect { click_on "Log in" }.to change(User, :count).by(0)
 
 #     expect(page).to have_content "Somethings wrong, try again"
 
