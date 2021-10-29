@@ -83,12 +83,12 @@ RSpec.describe AppointmentsController, type: :controller do
     expect(flash[:success]).to eq "Appointment could not be created"
   end
 
-it 'shows and index of all created appointments' do
-   describe "GET #index" do
-   subject { get :index }
-
-   it "renders the index template" do
-     expect(subject).to render_template("/appointments")
-    end
-  end
+#   describe "GET #index" do
+#     subject { get :index }
+#         #Makes a request to grab all currently generated appointments
+#         #Then requests display's index in list on page
+#       it "successfully displays the full index of created appointments" do
+#         expect(Appointment.all).to render_template("/appointments")
+#     end
+#   end
 end
